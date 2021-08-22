@@ -1,0 +1,14 @@
+<private-card
+  *ngIf="(topicsSelectionForm$ | async) as formState"
+  (primaryButtonClick)="saveCategories($event)"
+  [cardTitle]="'PRIVATE.ONBOARDING.PREFERRED_TOPICS.TEXT_PREFERRED_TOPICS' | translate"
+  [primaryButtonText]="'PRIVATE.ONBOARDING.TEXT_ONBOARDING' | translate"
+  [secondaryButtonText]="'PRIVATE.ONBOARDING.TEXT_PREVIOUS_STEP' | translate"
+  [isDisabled]="formState.isInvalid"
+  previousUrl="/onboarding/create-profile"
+  nextUrl="/news"
+>
+  <div class="preferred-topics-form">
+    <topics-selection [formControlState]="formState.controls.categories"></topics-selection>
+  </div>
+</private-card>

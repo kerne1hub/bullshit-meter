@@ -1,0 +1,39 @@
+<div class="statistics">
+  <private-menubar class="menubar"></private-menubar>
+  <div class="statistics-main">
+    <profile-navbar></profile-navbar>
+    <div class="statistics-rating card">
+      <div class="statistics-text-coincidence">
+        <span class="icon icon-rating"></span>
+        {{ 'PRIVATE.PROFILE.STATISTICS.TEXT_COINCIDENCE' | translate }}
+      </div>
+      <div class="statistics-select">
+        <statistics-select></statistics-select>
+      </div>
+      <div class="statistics-rating-text">
+        <span class="statistics-rating-percent">70%</span>
+        <span class="statistics-rating-description">
+          {{ 'PRIVATE.PROFILE.STATISTICS.TEXT_DESCRIPTION' | translate }}
+        </span>
+      </div>
+    </div>
+    <div class="statistics-history card">
+      <div class="statistics-history-header">
+        <div class="statistics-history-title">
+          <span class="statistics-history-text">
+            {{ 'PRIVATE.PROFILE.STATISTICS.TEXT_HISTORY' | translate }}
+          </span>
+        </div>
+        <a href="/profile/statistics/#" class="statistics-history-link">
+          <span class="statistics-history-text">
+            {{ 'PRIVATE.PROFILE.STATISTICS.TEXT_SEE_ALL' | translate }}
+          </span>
+          <span class="icon icon-mask icon-arrow-right"></span>
+        </a>
+      </div>
+      <div class="statistics-history-items">
+        <history-item *ngFor="let option of options" [title]="option.title" [rate]="option.rate"></history-item>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+@import 'variables';
+
+:host {
+  display: contents;
+}
+
+.create-profile {display: contents;
+  &-form {max-width: 300px;}
+  &-avatar {margin-bottom: 40px;}
+  @media(max-width: $mobile) {
+    &-form {width: auto;}
+    &-avatar {display: flex; justify-content: center; width: auto;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+

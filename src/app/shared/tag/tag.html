@@ -1,0 +1,16 @@
+<div
+  *ngIf="!isInput; else inputTagTemplate"
+  [ngStyle]="{ 'background-color': color, 'border-color': color }"
+  [id]="id"
+  class="tag"
+>
+  {{ text | titlecase }}
+</div>
+<ng-template #inputTagTemplate>
+  <label class="tag-label">
+    <input (change)="handleChange()" type="checkbox" class="tag-input" [checked]="isSelected" />
+    <span [ngStyle]="{ 'background-color': color, 'border-color': color }" [id]="id" class="tag">
+      {{ text | titlecase }}
+    </span>
+  </label>
+</ng-template>

@@ -1,0 +1,11 @@
+@import 'variables';
+
+.navbar {padding: 6px; background: $color-white; border: 1px solid $color-divider;
+  border-radius: 20px; margin-bottom: 12px;
+  &-item {display: inline-block; width: 50%; padding: 4px 0; text-align: center; border-radius: 31px;
+    font-size: $font-size-h5; font-weight: 600; color: $color-primary-darker;
+    &.active {color: $color-primary; background: $color-primary-transparent;}
+  }
+
+  @media(max-width: $mobile) {margin-top: 12px;}
+}

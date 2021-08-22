@@ -1,0 +1,28 @@
+@import 'variables';
+
+.comment {display: flex; margin-bottom: 16px;
+  &-details {background: $color-background; border-radius: 15px;
+    width: fit-content; min-width: 194px; padding: 8px 10px; margin-left: 8px;
+  }
+  &-avatar {vertical-align: top;}
+  &-data {font-size: $font-size-h6; font-weight: 500; color: $color-primary-darker;
+  line-height: 18px;
+  }
+  &-text {font-size: $font-size-h5; font-weight: 500; color: $color-secondary;
+  line-height: 20px;
+  }
+  &-buttons {text-align: right;
+    .button-text {font-size: $font-size-h6; font-weight: 410; color: $color-primary-darker;
+      margin-left: 6px;
+    }
+    .button-comment {
+      &.triggered {
+        .icon {background: $color-primary;}
+        .button-text {color: $color-primary;}
+      }
+    }
+  }
+  @media(max-width: $mobile) {
+    &-details {width: 100%;}
+  }
+}

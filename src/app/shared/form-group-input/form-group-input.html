@@ -1,0 +1,9 @@
+<div class="form-group">
+  <input
+    [ngrxFormControlState]="ngrxFormControlState"
+    [ngClass]="{ 'form-control-first': isFirst, 'form-control-last': isLast, 'form-control-default': isDefault }"
+    [placeholder]="placeholder"
+    class="form-control"
+  />
+  <span *ngIf="hasIcon" class="icon icon-pencil icon-mask form-control-icon"></span>
+</div>

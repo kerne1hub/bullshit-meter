@@ -1,0 +1,25 @@
+<div class="header">
+  <div class="header-content container">
+    <a routerLink="/" class="logo">
+      <span class="logo-icon"></span>
+      <span class="logo-text">BullShit Meter</span>
+    </a>
+    <div class="header-buttons">
+      <a class="button-gray button">
+        <span class="social-icon-apple social-icon"></span>
+        <span class="button-text">App Store</span>
+      </a>
+      <a href="#" class="button-gray button">
+        <span class="social-icon-googleplay social-icon"></span>
+        <span class="button-text">Google Play</span>
+      </a>
+      <a *ngIf="isProfilePage$ | async" (click)="logout()" class="button-primary button">
+        <span class="social-icon-logout social-icon"></span>
+        <span class="button-text">Logout</span>
+      </a>
+      <a *ngIf="isMainPage$ | async" routerLink="/profile" class="header-profile">
+        <avatar [url]="(profile$ | async)?.avatarUrl" size="small"></avatar>
+      </a>
+    </div>
+  </div>
+</div>

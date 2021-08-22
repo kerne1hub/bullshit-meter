@@ -1,0 +1,64 @@
+<div class="news-item">
+  <div class="news-item-image-wrapper">
+    <img
+      [src]="article.imageUrl || '/assets/images/no-image.png'"
+      alt=""
+      class="news-item-image"
+    />
+    <tag *ngIf="(tagName$ | async) as tagName" [id]="article.categoryID" [text]="tagName" class="news-item-tag"></tag>
+  </div>
+  <div class="news-item-main">
+
+    <h1 *ngIf="hasDetails; else linkTemplate" class="news-item-title">
+      {{ article.title }}
+    </h1>
+
+    <ng-template #linkTemplate>
+      <h1 class="news-item-title">
+        <a routerLink="{{ article.id }}"
+           routerLinkActive="active"
+           class="news-item-link"
+        >
+          {{ article.title }}
+        </a>
+      </h1>
+    </ng-template>
+
+    <div *ngIf="!hasDetails; else articleDetailsTemplate" class="news-item-text">{{ article.description }}</div>
+
+    <ng-template #articleDetailsTemplate>
+      <div class="news-item-text">{{ article.content }}
+        <a
+          href="{{ article.url }}"
+          target="_blank"
+          class="news-item-link"
+        >
+          {{ 'PRIVATE.SHARED.CONTENT_ITEM.LINK_MORE' | translate }}
+        </a>
+      </div>
+    </ng-template>
+
+    <div class="news-item-date">{{ article.publishedAt | dateTime }}</div>
+    <div class="divider"></div>
+
+    <div *ngIf="!article.providedRank; else ratingDetailsTemplate" class="news-item-buttons">
+      <div *ngFor="let rateType of rateTypes">
+        <button class="button button-rate button-{{ rateStyle[rateType] }}" (click)="rate(rateType)">
+          <article-rate-icon [rate]="rateType"></article-rate-icon>
+          <span class="button-text">{{ rateType | articleRateTranslation }}</span>
+        </button>
+      </div>
+    </div>
+
+    <ng-template #ratingDetailsTemplate>
+      <div *ngFor="let item of rateTypes" class="news-item-ranks">
+        <button class="button button-rate button-block button-{{ rateStyle[item] }}">
+          <article-rate-icon [rate]="item" size="small"></article-rate-icon>
+          <span class="button-text">{{ item | articleRateTranslation }}</span>
+          <span class="button-counter">{{ getRatesCount(item) }}</span>
+        </button>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+@import "variables";
+
+:host {
+  display: contents;
+}
+
+.card {flex: 1 0 0;
+  &-title {font-size: $font-size-h1; font-weight: 700; margin-bottom: 40px;}
+  &-buttons {display: flex; align-items: center; margin-top: 40px; max-width: 300px;
+    .button {flex: 1;}
+    .button:not(:last-child) {margin-right: 16px;}
+  }
+  @media(max-width: $mobile) {padding: 18px 16px; margin-bottom: 200px;
+    &-title {font-size: $font-size-h4; margin-bottom: 16px;}
+    &-buttons {position: fixed; bottom: 0; left: 0; background: $color-white; padding: 22px 22px 48px; max-width: none;
+      box-sizing: border-box; width: 100%;
+    }
+  }
+}

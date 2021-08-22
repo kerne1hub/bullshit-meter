@@ -1,0 +1,14 @@
+@import 'variables';
+
+.navbar {width: 100%; position: fixed; background: $color-white; border-bottom: 1px solid $color-divider;
+  z-index: 2;
+
+  &-content {display: flex; align-items: center; height: 90px;}
+  &-title {font-size: $font-size-h4; font-weight: 700; color: $color-primary-darker; width: calc(100% - 60px);
+    text-align: center;
+  }
+  @media(max-width: $mobile) {
+    &-content {height: 50px;}
+    &-title {font-size: $font-size-regular; font-weight: 600;}
+  }
+}

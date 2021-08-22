@@ -1,0 +1,6 @@
+@import 'variables';
+
+.history-item {position: relative; display: block; padding: 20px 0; border-top: 1px solid $color-divider;
+  &-text {width: 80%; margin-top: -8px; font-weight: 600;}
+  &-icon {position: absolute; top: 50%; transform: translateY(-50%); right: 0;}
+}

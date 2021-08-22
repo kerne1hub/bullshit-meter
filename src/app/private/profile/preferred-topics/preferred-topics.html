@@ -1,0 +1,16 @@
+<private-navbar [title]="'PRIVATE.SHARED.NAVBAR.TEXT_PREFERRED_TOPICS_PAGE' | translate"></private-navbar>
+<div class="preferred-topics page">
+  <div class="container-medium">
+    <private-card
+      *ngIf="(topicsSelectionForm$ | async) as formState"
+      [cardTitle]="'PRIVATE.PROFILE.PREFERRED_TOPICS.TEXT_TITLE' | translate"
+      [primaryButtonText]="'PRIVATE.PROFILE.BUTTON_SAVE' | translate"
+      [isDisabled]="formState.isInvalid"
+      (primaryButtonClick)="saveCategories()"
+    >
+      <div class="preferred-topics-form">
+        <topics-selection [formControlState]="formState.controls.categories"></topics-selection>
+      </div>
+    </private-card>
+  </div>
+</div>

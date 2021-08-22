@@ -1,0 +1,51 @@
+<div class="page sign-in">
+  <div class="sign-in-content">
+    <div class="sign-in-social">
+      <div class="container">
+        <div class="sign-in-text">
+          <div class="divider"></div>
+          <div class="sign-in-title">{{ 'PUBLIC.SIGN_IN.TEXT_TITLE' | translate }}</div>
+          <div class="sign-in-subtitle">{{ 'PUBLIC.SIGN_IN.TEXT_SUBTITLE' | translate }}</div>
+        </div>
+        <div class="sign-in-buttons">
+          <button class="button button-dark">
+            <span class="social-icon social-icon-apple inverted"></span>
+            <span class="button-text">{{ 'PUBLIC.SIGN_IN.BUTTON_SOCIAL_APPLE' | translate }}</span>
+          </button>
+          <button class="button button-lightblue-outline" (click)="googleLogin()">
+            <span class="social-icon social-icon-google"></span>
+            <span class="button-text">{{ 'PUBLIC.SIGN_IN.BUTTON_SOCIAL_GOOGLE' | translate }}</span>
+          </button>
+          <button class="button button-blue">
+            <span class="social-icon social-icon-facebook"></span>
+            <span class="button-text">{{ 'PUBLIC.SIGN_IN.BUTTON_SOCIAL_FACEBOOK' | translate }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="sign-in-app">
+      <div class="container">
+        <div class="sign-in-logo">
+          <div class="sign-in-icon"></div>
+          <div class="sign-in-text">
+            <pre class="sign-in-title">{{ 'PUBLIC.SIGN_IN.TEXT_INFO' | translate }}</pre>
+          </div>
+        </div>
+        <div class="sign-in-image">
+          <img src="/assets/img/ipad.png" alt="" class="sign-in-ipad">
+          <img src="/assets/img/iphone.png" alt="" class="sign-in-iphone">
+        </div>
+        <div class="sign-in-buttonsline">
+          <button class="button button-white">
+            <span class="social-icon social-icon-apple"></span>
+            <span class="button-text">{{ 'PUBLIC.SIGN_IN.BUTTON_APPLE' | translate }}</span>
+          </button>
+          <button class="button button-white">
+            <span class="social-icon social-icon-googleplay"></span>
+            <span class="button-text">{{ 'PUBLIC.SIGN_IN.BUTTON_GOOGLE_PLAY' | translate }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

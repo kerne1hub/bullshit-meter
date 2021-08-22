@@ -1,0 +1,19 @@
+<private-navbar [title]="'PRIVATE.SHARED.NAVBAR.TEXT_CHANGE_NAME_PAGE' | translate"></private-navbar>
+<div class="change-name page">
+  <div class="container-medium">
+    <private-card
+      *ngIf="(profileForm$ | async) as formState"
+      [cardTitle]="'PRIVATE.PROFILE.CHANGE_NAME.TEXT_TITLE' | translate"
+      [primaryButtonText]="'PRIVATE.PROFILE.BUTTON_SAVE' | translate"
+      [isDisabled]="formState.isInvalid"
+      (primaryButtonClick)="updateProfile()"
+    >
+      <div class="change-name-form">
+        <profile-form
+          [formControlStateName]="formState.controls.name"
+          [formControlStateEmail]="formState.controls.email"
+        ></profile-form>
+      </div>
+    </private-card>
+  </div>
+</div>

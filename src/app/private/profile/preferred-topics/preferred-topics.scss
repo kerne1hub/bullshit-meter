@@ -1,0 +1,7 @@
+@import 'variables';
+
+.preferred-topics {padding-top: 110px;
+  @media(max-width: $mobile) {padding-top: 62px;
+    .container-medium {padding: 0 22px;}
+  }
+}

@@ -1,0 +1,16 @@
+@import 'variables';
+
+.dropdown {position: relative; width: 100%; padding: 12px; font-weight: 500; color: $color-primary-darker;
+  box-sizing: border-box;
+  &-icon {position: absolute; top: 0; transform: translateY(25%) scale(0.8);}
+  &-content {display: none; z-index: 1; background-color: $color-white; position: absolute;
+    width: 100%; top: -2px; left: -2px; padding: 12px; box-sizing: border-box;
+    border-radius: 20px; border: 2px solid $color-divider;
+  }
+  &-item:not(:last-child) {margin-bottom: 16px;}
+  .active {color: $color-primary;}
+  &-open {
+    .dropdown-content {display: inline-block;}
+    .icon {display: none;}
+  }
+}

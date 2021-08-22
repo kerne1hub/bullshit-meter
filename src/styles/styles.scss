@@ -1,0 +1,158 @@
+@import 'variables';
+@import 'fonts';
+
+html, body {font-size: 17px; box-sizing: border-box; padding: 0; margin: 0; background-color: $color-background;}
+
+body, input, select, textarea {font-family: $font;}
+
+a {text-decoration: none;}
+
+.container {max-width: 996px; margin: 0 auto; padding: 0 22px;
+  &-small {max-width: 488px; margin: 0; padding: 0;}
+  &-medium {max-width: 691px; margin: 0 auto; padding: 0;}
+  @media(max-width: $mobile) {width: auto;
+    &-small {width: auto; max-width: 100%;}
+    &-medium {padding: 0 10px;}
+  }
+}
+
+.button {display: inline-block; border-radius: 15px; text-align: center; white-space: nowrap;
+  line-height: 54px; width: 183px; font-size: $font-size-regular; font-weight: 600;
+  cursor: pointer; outline: none; border: none;
+  &:disabled {background: $color-gray-darker; cursor: default;}
+  &-primary {background: $color-primary; color: $color-white;}
+  &-primary-outline {background: $color-white; color: $color-primary;
+    border: 2px solid $color-primary;}
+  &-dark {background: $color-black; color: $color-white; border: 1px solid $color-black;
+    &:hover {color: $color-white; background: $color-secondary;
+      border-color: $color-secondary;
+    }
+  }
+  &-blue {background: $color-blue; color: $color-white; border: 1px solid $color-blue;
+    &:hover {color: $color-white; background: $color-blue-light;
+      border-color: $color-blue-light;
+    }
+  }
+  &-lightblue {background: $color-blue-light; color: $color-white;
+    border: 1px solid $color-blue-light;
+    &:hover {color: $color-white; background: $color-blue;
+      border-color: $color-blue;
+    }
+    &-outline {color: $color-blue-light; background: transparent;
+      border: 1px solid $color-blue-light;
+      &:hover {color: $color-white; background: $color-blue-light;}
+    }
+  }
+  &-gray {background: $color-gray; color: $color-primary-darker;}
+  &-white {background: $color-white; color: $color-primary-darker;
+    &:hover {background: $color-gray;}
+    @media(max-width: $mobile) {width: 156px;}
+  }
+  &-poo {background: $color-brown;}
+  &-think {background: $color-divider;}
+  &-like {background: $color-yellow-true;}
+
+  &-block {display: block; max-width: 300px; flex: 1;}
+  &-rate {width: 48px; height: 48px; padding: 9px; line-height: 24px; border-radius: 50%;
+    border: 0;
+  }
+  &-comment {width: auto; background: none; line-height: normal;}
+  &-send {max-width: 44px; height: 44px; padding: 7px; background: $color-divider; border: 0;
+    border-radius: 50%;
+  }
+
+  @media(max-width: $mobile) {padding: 0 16px;
+    &-gray {padding: 0 15px;
+      .button-text {display: none;}
+    }
+    &-comment {padding: 0 5px;}
+    &-send {padding: 7px;}
+    &-block {max-width: none;}
+  }
+}
+
+.social-icon {width: 24px; height: 24px; display: inline-block; vertical-align: middle;
+  background: transparent url('/assets/icons/social-icons.svg') no-repeat;
+  --bg-position: 30px 30px;
+  background-position: var(--bg-position);
+  &-apple {--bg-position: -20px -74px;
+    &.inverted {--bg-position: -20px -20px;}
+  }
+  &-google {--bg-position: -100px -74px;}
+  &-googleplay {--bg-position: -60px -74px;}
+  &-facebook {--bg-position: -60px -20px;}
+  &-logout {--bg-position: -100px -20px; filter: invert(100%);}
+}
+
+.icon {width: 30px; height: 30px; display: inline-block; vertical-align: middle;
+  background: transparent url('/assets/icons/icons.svg') no-repeat;
+  --bg-position: 30px 30px;
+  background-position: var(--bg-position);
+  &-arrow-right {--bg-position: -1416px -104px;}
+  &-arrow-down {--bg-position: -1416px -48px;}
+  &-arrow-outline-left {--bg-position: -1248px -216px;}
+  &-pencil {--bg-position: -216px -216px;}
+  &-camera {--bg-position: -664px -160px;}
+  &-language {--bg-position: -1575px -48px;}
+  &-star {--bg-position: -552px -160px;}
+  &-gear {--bg-position: -216px -160px;}
+  &-message {--bg-position: -496px -48px;}
+  &-filters {--bg-position: -608px -216px;}
+  &-rating {--bg-position: -1572px -216px;}
+  &-like {--bg-position: -1631px -48px;}
+  &-dislike {--bg-position: -1687px -48px;}
+  &-send {--bg-position: -944px -48px;}
+
+  &-mask {mask: url('/assets/icons/icons.svg') no-repeat;
+    mask-position: var(--bg-position);
+    background: $color-primary-darker;
+  }
+}
+
+.card {padding: 40px; border-radius: 25px; border: 1px solid $color-divider;
+  background: $color-white;
+
+  @media(max-width: $mobile) {padding: 24px;}
+}
+
+.tag {display: inline-block; padding: 6px 12px; background: $color-gray; border-radius: 17px;
+  color: $color-white; border: 2px solid $color-primary; font-size: $font-size-h6;
+
+  &-primary {background: $color-primary; border-color: $color-primary;}
+  &-blue-light {background: $color-blue-light; border-color: $color-blue-light;}
+  &-yellow {background: $color-yellow; border-color: $color-yellow;}
+  &-red {background: $color-red; border-color: $color-red;}
+  &-pink {background: $color-pink; border-color: $color-pink;}
+  &-orange {background: $color-orange; border-color: $color-orange;}
+  &-green {background: $color-green; border-color: $color-green;}
+  &-green-light {background: $color-green-lighter; border-color: $color-green-lighter;}
+  &-outline {color: $color-primary; background: $color-white;}
+
+  &-input {display: none;
+    &:not(:checked) + .tag {background: $color-gray-darker; border-color: $color-gray-darker;
+      color: $color-white;
+    }
+  }
+
+  &-label {display: contents; cursor: pointer;}
+}
+
+.card {padding: 40px;
+  border-radius: 25px; border: 1px solid $color-divider; background: $color-white;
+}
+
+.form {
+  &-group {position: relative; width: 100%;}
+
+  &-control {box-sizing: border-box; width: 100%; display: block; padding: 18px;
+    font-size: $font-size-regular; outline: none;
+    &-first {border: 2px solid $color-divider; border-bottom: none; border-radius: 20px 20px 0 0;}
+    &-last {border: 2px solid $color-divider; border-radius: 0 0 20px 20px;}
+    &-default {border: none; border-radius: 15px; background: $color-background; padding: 12px;}
+    &-icon {position: absolute; top: 50%; transform: translateY(-50%); right: 16px;}
+  }
+
+  @media(max-width: $mobile) {
+    &-group {width: auto;}
+  }
+}

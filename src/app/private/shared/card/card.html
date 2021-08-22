@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-title">{{ cardTitle }}</div>
+
+  <ng-content></ng-content>
+
+  <div class="card-buttons">
+    <button *ngIf="secondaryButtonText" [routerLink]="previousUrl" class="button button-primary-outline">
+      <span class="button-text">{{ secondaryButtonText }}</span>
+    </button>
+    <button
+      [ngClass]="{ 'button-block': !secondaryButtonText }"
+      (click)="handleClick()"
+      class="button button-primary"
+      [disabled]="isDisabled"
+    >
+      <span class="button-text">{{ primaryButtonText }}</span>
+    </button>
+  </div>
+</div>

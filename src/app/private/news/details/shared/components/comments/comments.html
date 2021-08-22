@@ -1,0 +1,27 @@
+<div class="comments">
+  <div class="divider"></div>
+  <div class="comments-bar">
+    <span class="icon icon-message icon-mask"></span>
+    <span class="comments-count">Comments: {{ totalComments$ | async }}</span>
+    <span class="icon icon-filters icon-mask"></span>
+  </div>
+  <div infinite-scroll (scrolled)="onScrollDown()" class="comments-content">
+    <news-details-comment
+      *ngFor="let comment of comments$ | async; trackByProperty: 'id'"
+      [comment]="comment"
+      (rating)="rate(comment.id, $event)"
+    >
+    </news-details-comment>
+    <div *ngIf="(commentFormState$ | async) as formState" class="comments-footer">
+      <avatar url="{{ avatarUrl$ | async }}" size="extrasmall"></avatar>
+      <private-comment-form
+        [formControlStateContent]="formState.controls.content"
+        class="comments-input"
+      >
+      </private-comment-form>
+      <button class="button button-send" (click)="createComment()">
+        <span class="icon icon-send icon-mask"></span>
+      </button>
+    </div>
+  </div>
+</div>

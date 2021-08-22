@@ -1,0 +1,22 @@
+@import 'variables';
+
+.dropdown {position: relative; vertical-align: top; z-index: 1; width: 100%;
+  display: inline-block; color: $color-primary-darker; font-weight: 600;
+  &-value {box-sizing: border-box; width: 100%; padding: 18px 16px; border: 2px solid $color-divider;
+    border-radius: 20px; cursor: pointer;
+  }
+  &-icon {position: absolute; top: 50%; transform: translateY(-50%); right: 15px;}
+  &-content {display: none; position: absolute; top: 70px; background: $color-white; cursor: pointer;
+    box-sizing: border-box; width: 100%; padding: 12px 0; border: 2px solid $color-divider; border-radius: 20px;
+    height: 300px; overflow: auto;
+  }
+  &-item {padding: 8px 16px;
+    &:hover {background: $color-primary-transparent;}
+  }
+
+  &-open {
+    .dropdown-value {border-color: $color-primary;}
+    .dropdown-content {display: block; height: 150px;}
+    .icon-mask {background: $color-primary;}
+  }
+}

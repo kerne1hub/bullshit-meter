@@ -1,0 +1,49 @@
+<div class="menubar card">
+  <div class="menubar-profile">
+    <avatar size="default" [url]="(profile$ | async)?.avatarUrl"></avatar>
+    <div class="menubar-person">
+      <a
+        routerLink="/profile"
+        routerLinkActive="active"
+        class="menubar-fullname"
+      >
+        {{ (profile$ | async)?.name }}
+      </a>
+      <div class="menubar-social">via {{ loginService }}</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="menubar-menu">
+    <a
+      *ngFor="let link of links; trackByProperty: 'text'"
+      routerLink="/news"
+      [queryParams]="link.filter"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="menubar-item"
+    >
+      {{ 'PRIVATE.SHARED.MENUBAR.TEXT_FILTERS_' + link.text | translate }}
+    </a>
+
+  </div>
+  <div class="divider"></div>
+  <div class="menubar-topics">
+    <div class="menubar-text">{{ 'PRIVATE.SHARED.MENUBAR.TEXT_TOPICS' | translate }}</div>
+    <a
+      routerLink="/profile/settings/preferred-topics"
+      routerLinkActive="active"
+      class="icon icon-gear icon-mask"
+    >
+    </a>
+    <div *ngIf="(selectedCategories$ | async) as options" class="menubar-tags">
+      <tag
+        *ngFor="let option of options;
+        trackByProperty: 'id'"
+        [id]="option.id"
+        [text]="option.name"
+        class="menubar-tag"
+      >
+      </tag>
+    </div>
+  </div>
+</div>

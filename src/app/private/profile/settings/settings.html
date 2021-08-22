@@ -1,0 +1,40 @@
+<div class="settings">
+  <private-menubar class="menubar"></private-menubar>
+  <div class="settings-main">
+    <profile-navbar></profile-navbar>
+    <div class="settings-profile card">
+      <div class="settings-profile-avatar">
+        <avatar (uploadAvatar)="uploadAvatar($event)" size="large" [canChangeAvatar]="true" [url]="(profile$ | async)?.avatarUrl"></avatar>
+      </div>
+      <div class="settings-profile-info">
+        <div class="settings-profile-name">
+          {{ (profile$ | async)?.name }}
+          <a routerLink="./change-name" class="icon icon-pencil icon-mask"></a>
+        </div>
+        <div class="settings-profile-social">
+          via {{ loginService }}
+        </div>
+      </div>
+    </div>
+    <a routerLink="./select-language" class="settings-item">
+      <div class="settings-item-name">
+        <span class="icon icon-language icon-mask"></span>
+        <span class="settings-item-text">
+          {{ 'PRIVATE.PROFILE.SETTINGS.TEXT_LANGUAGE' | translate }}
+        </span>
+      </div>
+      <div class="settings-item-value">
+        <span class="settings-item-text">{{ selectedLanguageTitle$ | async }}</span>
+        <span class="icon icon-arrow-right icon-mask"></span>
+      </div>
+    </a>
+    <a routerLink="./preferred-topics" class="settings-item">
+      <div class="settings-item-name">
+        <span class="icon icon-star icon-mask"></span>
+        <span class="settings-item-text">
+          {{ 'PRIVATE.PROFILE.SETTINGS.TEXT_PREFERRED_TOPICS' | translate }}
+        </span>
+      </div>
+    </a>
+  </div>
+</div>

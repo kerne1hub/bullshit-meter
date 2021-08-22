@@ -1,0 +1,28 @@
+@import 'variables';
+
+.statistics {display: flex;
+  &-main {flex: 0 0 488px;}
+  &-rating {position: relative; padding: 21px;
+    &-text {display: inline-block; color: $color-primary; margin: 50px 0 10px 50px; font-weight: 700;}
+    &-percent {font-size: $font-size-huge; margin-right: 16px;}
+    &-description {display: inline-block; max-width: 163px; font-size: $font-size-h4; letter-spacing: 0.015rem;}
+  }
+  &-text-coincidence {position: absolute; top: 21px; left: 16px;}
+  &-select {width: 130px; position: absolute; top: 12px; right: 16px; cursor: pointer;}
+  &-history {margin: 12px 0; padding: 21px 16px 16px;
+    &-header {display: flex; justify-content: space-between; position: relative; margin-right: 30px;
+      margin-bottom: 16px;
+      .icon {position: absolute; top: 0; right: -35px; transform: translateY(-15%);}
+    }
+    &-link {color: $color-primary-darker; font-weight: 600;}
+  }
+
+  @media(max-width: $mobile) {display: block;
+    .menubar {display: none;}
+    &-rating {padding: 19px;
+      &-text {margin: 50px 0px 10px 20px;}
+      &-percent {font-size: $font-size-large;}
+      &-description {font-size: $font-size-regular;}
+    }
+  }
+}

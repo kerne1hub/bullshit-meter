@@ -1,0 +1,10 @@
+@import 'variables';
+
+.form {display: flex; flex-wrap: wrap; margin-bottom: -12px;
+  &-tag {margin-right: 12px; margin-bottom: 12px;}
+  &-select-all {width: 100%; cursor: pointer;}
+
+  @media(max-width: $mobile) {
+    &-select-all {width: auto;}
+  }
+}

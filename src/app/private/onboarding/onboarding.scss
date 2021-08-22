@@ -1,0 +1,5 @@
+@import 'variables';
+
+.onboarding {display: flex; align-items: flex-start; padding-top: 20px;
+  @media(max-width: $mobile) {display: block;}
+}

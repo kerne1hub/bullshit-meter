@@ -1,0 +1,12 @@
+<private-card
+  *ngIf="(languageSelectionForm$ | async) as languageSelectionForm"
+  (primaryButtonClick)="saveSelectedLanguage($event)"
+  [cardTitle]="'PRIVATE.ONBOARDING.SELECT_LANGUAGE.TEXT_SELECT_LANGUAGE' | translate"
+  [primaryButtonText]="'PRIVATE.ONBOARDING.TEXT_CONTINUE' | translate"
+  [isDisabled]="languageSelectionForm.isInvalid"
+  nextUrl="/onboarding/create-profile"
+>
+  <div class="select-language-form">
+    <language-selection [formControlState]="languageSelectionForm.controls.languageID"></language-selection>
+  </div>
+</private-card>

@@ -1,0 +1,28 @@
+@import 'variables';
+
+.settings {display: flex;
+  &-main {flex: 0 0 488px;}
+  &-profile {display: flex;
+    &-info {padding: 0 22px;}
+    &-name {font-size: $font-size-h3; font-weight: 700;}
+    &-social {color: $color-gray-dark; font-weight: 600;}
+  }
+
+  &-item {display: flex; color: $color-black; justify-content: space-between; padding: 15px; background: $color-white;
+    border: 1px solid $color-divider; border-radius: 20px; margin-top: 12px;
+    &-text {vertical-align: middle;}
+    &-value {color: $color-primary-darker;}
+  }
+
+  .icon {transform: scale(0.8);}
+
+  @media(max-width: $mobile) {display: block;
+    .menubar {display: none;}
+    &-profile {display: block;
+      &-avatar {display: flex; justify-content: center; margin-bottom: 15px;}
+      &-info {text-align: center;}
+      &-name {font-size: $font-size-h4;}
+      &-social {font-size: $font-size-h5;}
+    }
+  }
+}

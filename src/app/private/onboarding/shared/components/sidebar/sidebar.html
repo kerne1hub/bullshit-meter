@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <div class="sidebar-title">{{ 'PRIVATE.ONBOARDING.TEXT_SIGN_UP' | translate }}</div>
+  <div class="sidebar-menu">
+    <a
+      routerLink="select-language"
+      routerLinkActive="sidebar-item-active"
+      class="sidebar-item"
+    >
+      {{ 'PRIVATE.ONBOARDING.TEXT_SELECT_LANGUAGE' | translate }}
+    </a>
+    <a
+      [ngClass]="{ 'sidebar-item-disabled': (isLanguageFormValid$ | async) === false }"
+      routerLink="create-profile"
+      routerLinkActive="sidebar-item-active"
+      class="sidebar-item"
+    >
+      {{ 'PRIVATE.ONBOARDING.TEXT_CREATE_PROFILE' | translate }}
+    </a>
+    <a
+      [ngClass]="{ 'sidebar-item-disabled': (isLanguageFormValid$ | async) === false || (isProfileFormValid$ | async) === false }"
+      routerLink="preferred-topics"
+      routerLinkActive="sidebar-item-active"
+      class="sidebar-item"
+    >
+      {{ 'PRIVATE.ONBOARDING.TEXT_PREFERRED_TOPICS' | translate }}
+    </a>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<private-navbar [title]="'PRIVATE.SHARED.NAVBAR.TEXT_SELECT_LANGUAGE_PAGE' | translate"></private-navbar>
+<div class="select-language page">
+  <div class="container-medium">
+    <private-card
+      *ngIf="(languageSelectionForm$ | async) as formState"
+      [cardTitle]="'PRIVATE.PROFILE.SELECT_LANGUAGE.TEXT_TITLE' | translate"
+      [primaryButtonText]="'PRIVATE.PROFILE.BUTTON_SAVE' | translate"
+      [isDisabled]="formState.isInvalid"
+      (primaryButtonClick)="saveSelectedLanguage()"
+    >
+      <div class="select-language-form">
+        <language-selection [formControlState]="formState.controls.languageID"></language-selection>
+      </div>
+    </private-card>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+@import 'variables';
+
+.menubar {width: 205px; flex: 0 0 205px; margin-right: 20px;
+  &-profile {display: flex; align-items: center;}
+  &-person {display: inline-block; vertical-align: middle; margin-left: 14px;}
+  &-fullname {font-size: $font-size-h4; font-weight: 700; color: $color-secondary;}
+  &-social {font-size: $font-size-h5; font-weight: 600; color: $color-gray-dark;
+    line-height: 20px;}
+  &-menu {font-size: $font-size-regular; font-weight: 600; margin: 0 -10px;}
+  &-item {display: block; padding: 3px 10px; border-radius: 31px; text-decoration: none;
+    color: $color-primary-darker; margin-bottom: 10px; cursor: pointer;
+    &.active {background-color: $color-primary-transparent; color: $color-primary}
+  }
+  &-topics {
+    .icon {display: inline-block; vertical-align: middle; margin-left: 8px;}
+  }
+  &-text {display: inline-block; font-size: $font-size-regular; font-weight: 600;
+    color: $color-secondary; line-height: 22px; vertical-align: middle;}
+  &-tags {display: flex; flex-wrap: wrap; margin: 10px -6px 0 -6px;}
+  &-tag {margin: 6px;}
+
+  @media(max-width: $mobile) {background: $color-background; width: auto;
+    margin: 0 -22px 12px; border-radius: 0; padding: 12px 22px; border: 0;
+    &-topics, &-profile, .divider {display: none;}
+    &-menu {display: flex; flex-wrap: wrap; justify-content: space-between;
+      background: $color-white; border: 1px solid $color-divider;
+      border-radius: 20px; margin: 0; padding: 6px;}
+    &-item {height: 28px; margin: 0; line-height: 28px; min-width: 56px;
+      text-align: center;}
+  }
+}
+
+.divider { border-top: 1px solid $color-divider; margin: 20px 0;}

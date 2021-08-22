@@ -1,0 +1,12 @@
+$image-width: 376;
+
+.article-rate-icon {display: inline-block; vertical-align: middle;
+  background: transparent url('/assets/icons/icons-rate.png') no-repeat;
+  background-size: var(--bg-size); background-position: var(--bg-position);
+  &-medium {width: 30px; height: 30px; --bg-size: 188px;}
+  &-small {width: 24px; height: 24px; --bg-size: 150.4px;}
+  &.truth {--bg-position: calc(-272 * var(--bg-size)/#{$image-width}) calc(-40 * var(--bg-size)/#{$image-width});}
+  &.not_sure {--bg-position: calc(-160 * var(--bg-size)/#{$image-width}) calc(-40 * var(--bg-size)/#{$image-width});}
+  &.fake {--bg-position: calc(-46 * var(--bg-size)/#{$image-width}) calc(-40 * var(--bg-size)/#{$image-width});}
+}
+

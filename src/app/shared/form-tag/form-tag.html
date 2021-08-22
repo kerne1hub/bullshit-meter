@@ -1,0 +1,14 @@
+<div class="form">
+  <label class="form-select-all form-tag">
+    <input (change)="selectAll($event)" type="checkbox" class="tag-input" [checked]="isAllSelected" />
+    <span class="tag tag-outline">All</span>
+  </label>
+  <div *ngFor="let option of options; trackByProperty: 'id'" class="form-tag" >
+    <tag
+      (inputChanged)="inputChanged($event)"
+      [isSelected]="isSelected(option.id)"
+      [isInput]="true" [id]="option.id"
+      [text]="option.text"
+    ></tag>
+  </div>
+</div>

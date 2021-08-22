@@ -1,0 +1,22 @@
+<div class="create-profile">
+  <private-card
+    *ngIf="(createProfileForm$ | async) as formState"
+    (primaryButtonClick)="updateProfile($event)"
+    [cardTitle]="'PRIVATE.ONBOARDING.CREATE_PROFILE.TEXT_CREATE_PROFILE' | translate"
+    [primaryButtonText]="'PRIVATE.ONBOARDING.TEXT_CONTINUE' | translate"
+    [secondaryButtonText]="'PRIVATE.ONBOARDING.TEXT_PREVIOUS_STEP' | translate"
+    [isDisabled]="formState.isInvalid"
+    previousUrl="/onboarding/select-language"
+    nextUrl="/onboarding/preferred-topics"
+  >
+    <div class="create-profile-form">
+      <div class="create-profile-avatar">
+        <avatar (uploadAvatar)="uploadAvatar($event)" [url]="(profile$ | async)?.avatarUrl" [canChangeAvatar]="true" size="large"></avatar>
+      </div>
+      <profile-form
+        [formControlStateName]="formState.controls.name"
+        [formControlStateEmail]="formState.controls.email"
+      ></profile-form>
+    </div>
+  </private-card>
+</div>

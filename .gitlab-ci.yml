@@ -1,0 +1,79 @@
+stages:
+  - prepare
+  - lint
+  - build
+  - push
+  - deploy
+
+variables:
+  CI_PROJECT_NAME: bullshit-meter-angular
+  DOMAIN: bullshit-meter.ronasit.com
+  DOCKERFILE: ./Dockerfile
+  CHART_REPO: ronasit/static
+  CHART_VERSION: &ref "1.1.1"
+  DOCKER_CONTAINER_REGISTRY: gcr.io/ronas-it-development/${CI_PROJECT_NAME}-${CI_ENVIRONMENT_SLUG}
+
+include:
+  - project: 'k8s-tools/charts/static'
+    ref: *ref
+    file: '/helpers/.gitlab-ci-template.yml'
+
+cache: &global_cache
+  paths:
+    - ./node_modules
+  policy: pull
+
+.build_template: &build
+  stage: build
+  image: node:16
+  script:
+    - npm run-script build:development
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
+  tags:
+    - docker
+    - linux
+
+node_dependencies:
+  stage: prepare
+  image: node:16
+  script:
+    - npm i
+  tags:
+    - docker
+    - linux
+  cache:
+    <<: *global_cache
+    policy: pull-push
+
+tslint:
+  stage: lint
+  image: node:16
+  script:
+    - npm run-script lint
+  tags:
+    - docker
+    - linux
+
+build_development:
+  <<: *build
+  except:
+    - production
+    - master
+
+push:
+  extends: .push_gcr
+  environment:
+    name: "development"
+  only:
+    - development
+
+deploy_development:
+  environment:
+    name: "development"
+    url: https://dev.${DOMAIN}
+  extends: .deploy
+  only:
+    - development

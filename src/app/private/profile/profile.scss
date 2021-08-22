@@ -1,0 +1,5 @@
+@import 'variables';
+
+.profile {padding-top: 20px;
+  @media (max-width: $mobile) {padding-top: 0;}
+}

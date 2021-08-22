@@ -1,0 +1,17 @@
+<div class="comment">
+  <avatar url="{{ comment.user?.avatarUrl }}" size="extrasmall" class="comment-avatar"></avatar>
+  <div class="comment-details">
+    <div class="comment-data">{{ comment.user?.name }} • {{ comment.createdAt | dateTime: dateFormat }}</div>
+    <div class="comment-text">{{ comment.content }}</div>
+    <div class="comment-buttons">
+      <button
+        *ngFor="let ratingItem of [commentRating.LIKE, commentRating.DISLIKE]"
+        (click)="rate(ratingItem)"
+        class="button button-comment {{ getButtonStyle(ratingItem) }}"
+      >
+        <span class="icon icon-{{ ratingItem }} icon-mask"></span>
+        <span class="button-text">{{ getCounter(ratingItem) }}</span>
+      </button>
+    </div>
+  </div>
+</div>

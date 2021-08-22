@@ -1,0 +1,9 @@
+@import 'variables';
+
+:host {
+  display: contents;
+}
+
+.select-language-form {max-width: 300px;
+  @media(max-width: $mobile) {width: 100%;}
+}

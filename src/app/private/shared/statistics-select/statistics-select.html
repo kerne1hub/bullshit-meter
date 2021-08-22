@@ -1,0 +1,15 @@
+<div class="dropdown" dropdown>
+  <div class="dropdown-trigger dropdown-value" (click)="onClick(value)">
+    {{ value }}
+    <span class="icon icon-arrow-down icon-mask dropdown-icon"></span>
+  </div>
+  <div class="dropdown-content">
+    <div
+      *ngFor="let option of options"
+      class="dropdown-item{{ option === value ? ' active' : '' }}"
+      (click)="onClick(option)"
+    >
+      {{ option }}
+    </div>
+  </div>
+</div>

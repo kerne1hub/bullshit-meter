@@ -1,0 +1,22 @@
+<private-navbar [title]="'PRIVATE.SHARED.NAVBAR.TEXT_DETAILS_PAGE' | translate"></private-navbar>
+<div *ngIf="article$ | async as article" class="details">
+  <div class="container-medium">
+    <private-news-item
+      [article]="article"
+      [hasDetails]="true"
+      (rating)="rateItem($event)"
+      class="details-content"
+    >
+    </private-news-item>
+    <news-details-comments
+      [commentFormState$]="commentFormState$"
+      [comments$]="comments$"
+      [totalComments$]="totalComments$"
+      [avatarUrl$]="avatarUrl$"
+      (comment)="createComment()"
+      (rating)="rateComment($event)"
+      (scrollDown)="onScrollDown()"
+    >
+    </news-details-comments>
+  </div>
+</div>

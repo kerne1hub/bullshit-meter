@@ -1,0 +1,101 @@
+{
+  "PUBLIC": {
+    "NOT_FOUND": {
+      "TEXT_TITLE": "Oops... Error",
+      "TEXT_MESSAGE": "Something went wrong"
+    },
+    "SIGN_IN": {
+      "TEXT_TITLE": "Join us",
+      "TEXT_SUBTITLE": "via social media",
+      "TEXT_INFO": "Stay informed\nabout everything",
+      "BUTTON_SOCIAL_APPLE": "Continue with Apple",
+      "BUTTON_SOCIAL_GOOGLE": "Continue with Google",
+      "BUTTON_SOCIAL_FACEBOOK": "Continue with Facebook",
+      "BUTTON_APPLE": "App Store",
+      "BUTTON_GOOGLE_PLAY": "Google Play"
+    }
+  },
+  "PRIVATE": {
+    "NEWS": {
+      "TEXT_NO_ARTICLES": "Oops, there's nothing here",
+      "TEXT_NO_ARTICLES_DESCRIPTION": "You haven't marked the news in this category yet"
+    },
+    "PROFILE": {
+      "TEXT_PROFILE": "Profile",
+      "TEXT_STATISTICS": "Statistics",
+      "BUTTON_SAVE":"Save",
+      "SETTINGS": {
+        "TEXT_LANGUAGE": "Language",
+        "TEXT_PREFERRED_TOPICS": "Preferred Topics"
+      },
+      "STATISTICS": {
+        "TEXT_COINCIDENCE": "Coincidence",
+        "TEXT_DESCRIPTION": "Coincidence with public opinion",
+        "TEXT_HISTORY": "History",
+        "TEXT_SEE_ALL": "See all"
+      },
+      "CHANGE_NAME": {
+        "TEXT_TITLE": "Enter a name"
+      },
+      "SELECT_LANGUAGE": {
+        "TEXT_TITLE": "Select the language to display"
+      },
+      "PREFERRED_TOPICS" : {
+        "TEXT_TITLE": "Choose interesting topics on which you want to see news"
+      }
+    },
+    "ONBOARDING": {
+      "TEXT_SIGN_UP": "Sign Up",
+      "TEXT_SELECT_LANGUAGE": "Select language",
+      "TEXT_CREATE_PROFILE": "Creating a profile",
+      "TEXT_PREFERRED_TOPICS": "Preferred topics",
+      "TEXT_PREVIOUS_STEP": "Previous step",
+      "TEXT_CONTINUE": "Continue",
+      "TEXT_ONBOARDING": "Onboarding",
+      "SELECT_LANGUAGE": {
+        "TEXT_SELECT_LANGUAGE": "Select the language to display"
+      },
+      "CREATE_PROFILE": {
+        "TEXT_CREATE_PROFILE": "Enter your profile information"
+      },
+      "PREFERRED_TOPICS" : {
+        "TEXT_PREFERRED_TOPICS": "Choose interesting topics on which you want to see news"
+      }
+    },
+    "SHARED": {
+      "MENUBAR": {
+        "TEXT_FILTERS_NONE": "All",
+        "TEXT_FILTERS_NEW": "New",
+        "TEXT_FILTERS_TRUTH": "Truth",
+        "TEXT_FILTERS_FAKE": "Fake",
+        "TEXT_TOPICS": "Displayed topics"
+      },
+      "NAVBAR": {
+        "TEXT_DETAILS_PAGE": "Details",
+        "TEXT_CHANGE_NAME_PAGE": "Name change",
+        "TEXT_SELECT_LANGUAGE_PAGE": "Select language",
+        "TEXT_PREFERRED_TOPICS_PAGE": "Preferred topics"
+      },
+      "CONTENT_ITEM": {
+        "LINK_MORE": "Read More"
+      },
+      "COMMENT_FORM": {
+        "TEXT_CONTENT": "Add a public comment..."
+      },
+      "PROFILE_FORM": {
+        "TEXT_NAME": "Name",
+        "TEXT_EMAIL": "Email"
+      }
+    }
+  },
+  "SHARED": {
+    "ARTICLE_RATE_TRANSLATION": {
+      "TEXT_FAKE": "Fake",
+      "TEXT_NOT_SURE": "Not sure",
+      "TEXT_TRUTH": "True"
+    },
+    "SELECT": {
+      "TEXT_DEFAULT_VALUE": "Please select..."
+    }
+  }
+}

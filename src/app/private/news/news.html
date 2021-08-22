@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="news">
+    <private-menubar></private-menubar>
+    <div *ngIf="(articles$ | async) as articles" class="news-content">
+      <div *ngIf="articles?.length; else noArticlesTemplate" infinite-scroll (scrolled)="onScrollDown()">
+        <div *ngFor="let article of articles; trackByProperty: 'id'" class="card">
+          <private-news-item [article]="article" (rating)="rateItem(article.id, $event)"></private-news-item>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noArticlesTemplate>
+      <div *ngIf="(isLoading$ | async) === false" class="card">
+        <div class="news-message">
+          <img src="/assets/images/nothing.png" alt="" class="news-empty"/>
+          <div class="news-title">{{ 'PRIVATE.NEWS.TEXT_NO_ARTICLES' | translate }}</div>
+          <div class="news-description">{{ 'PRIVATE.NEWS.TEXT_NO_ARTICLES_DESCRIPTION' | translate }}</div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

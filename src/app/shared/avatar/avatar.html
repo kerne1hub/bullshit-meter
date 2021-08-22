@@ -1,0 +1,14 @@
+<div *ngIf="!canChangeAvatar; else avatarWithInputTemplate" class="avatar avatar-{{ size }}">
+  <img [src]="url || '/assets/images/no-avatar.png'" class="avatar-image" />
+  <div *ngIf="hasNotifications" class="avatar-online"></div>
+</div>
+<ng-template #avatarWithInputTemplate>
+  <label class="avatar avatar-{{ size }}">
+    <img [src]="url" class="avatar-image" />
+    <div class="avatar-icon">
+      <span class="icon icon-camera icon-mask"></span>
+    </div>
+    <input (change)="handleFileUpload($event)" class="avatar-input" type="file" accept=".png, .jpg, .jpeg, .bmp">
+  </label>
+</ng-template>
+

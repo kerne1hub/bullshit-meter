@@ -1,0 +1,15 @@
+<div class="dropdown" dropdown>
+  <div class="dropdown-trigger dropdown-value">
+    {{ selectedOption?.title || this.placeholder || 'SHARED.SELECT.TEXT_DEFAULT_VALUE' | translate }}
+    <span class="icon icon-arrow-down icon-mask dropdown-icon"></span>
+  </div>
+  <div class="dropdown-content">
+    <div
+      *ngFor="let option of options"
+      class="dropdown-item"
+      (click)="onClick(option)"
+    >
+      {{ option.title }}
+    </div>
+  </div>
+</div>

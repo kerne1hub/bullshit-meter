@@ -1,0 +1,33 @@
+@import "variables";
+
+.header {width: 100%; position: fixed; background: $color-white; border-bottom: 1px solid $color-divider;
+  z-index: 2;
+
+  &-content {display: flex; align-items: center; justify-content: space-between; height: 90px;}
+  &-profile {display: none; margin-left: 22px;}
+
+  .logo {
+    &-icon {width: 41px; height: 32px; display: inline-block; vertical-align: middle;
+      background: transparent url('/assets/icons/logo.svg') 0 0 no-repeat;}
+    &-text {display: inline-block; vertical-align: middle;
+      font-size: $font-size-h4; color: $color-primary; margin-left: 7px; font-weight: 700;}
+
+    @media(max-width: $mobile) {
+      &-text {display: none;}
+    }
+  }
+
+  &-buttons {display: flex; align-items: center;
+    .button {margin-left: 22px;}
+    .button-text {margin-left: 18px;}
+
+    @media(max-width: $mobile) {
+      .button {width: auto;}
+      .button-text {display: none;}
+    }
+  }
+
+  @media(max-width: $mobile){
+    &-profile {display: block;}
+  }
+}

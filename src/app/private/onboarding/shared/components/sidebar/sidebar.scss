@@ -1,0 +1,17 @@
+@import 'variables';
+
+.sidebar {display: block; width: 205px; flex: 0 0 205px; padding: 40px; margin-right: 20px;
+  border-radius: 25px; background: $color-white; border: 1px solid $color-divider;
+  &-title {color: $color-secondary; font-size: $font-size-h2; font-weight: 700; margin-bottom: 24px;}
+  &-menu {font-size: $font-size-regular; font-weight: 600; margin: 0 -10px;}
+  &-item {display: block; padding: 3px 10px; border-radius: 31px; text-decoration: none;
+    color: $color-primary-darker; margin-bottom: 10px;
+    &-active {background-color: $color-primary-transparent; color: $color-primary;}
+    &-disabled {opacity: 0.7; pointer-events: none; cursor: default;}
+  }
+  @media(max-width: $mobile) {width: auto; margin: 0 -22px 12px; border-radius: 0; padding: 22px;
+    &-title {display: none;}
+    &-menu {margin: 0;}
+    &-item {display: table;}
+  }
+}
